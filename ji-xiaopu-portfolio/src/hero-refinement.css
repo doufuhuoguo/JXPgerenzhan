@@ -1,0 +1,32 @@
+.hero-video {
+  background: radial-gradient(ellipse 78% 53% at 54% 19%, #979795 0, #59595b 29%, #242426 55%, #0a0a0b 76%, #050506 100%);
+}
+
+.hero-video::after {
+  background:
+    radial-gradient(ellipse at 51% 49%, transparent 0 22%, rgba(0, 0, 0, .16) 49%, rgba(0, 0, 0, .64) 78%),
+    linear-gradient(180deg, rgba(0, 0, 0, .08) 0 43%, rgba(0, 0, 0, .02) 51%, rgba(0, 0, 0, .95) 84%),
+    linear-gradient(90deg, rgba(0, 0, 0, .5), transparent 45%, rgba(0, 0, 0, .32));
+}
+
+.horizon {
+  background: linear-gradient(90deg, transparent, #d9d9d5 17%, #fff 49%, #d7d7d4 82%, transparent);
+  opacity: .82;
+}
+
+.trail {
+  background: linear-gradient(90deg, transparent, #c9c9c7 20%, #f0f0eb 38%, #555 67%, transparent);
+}
+
+.hero h1 {
+  margin-top: 33px;
+  font-size: clamp(58px, 7.2vw, 124px);
+  line-height: .96;
+  letter-spacing: .095em;
+}
+
+.hero h1 strong { letter-spacing: .06em; }
+
+@media (max-width: 900px) {
+  .hero h1 { font-size: clamp(48px, 12vw, 76px); letter-spacing: .055em; }
+}

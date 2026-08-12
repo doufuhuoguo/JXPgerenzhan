@@ -1,0 +1,52 @@
+.profile-heading p {
+  color: #f5f5f1;
+  font-size: clamp(48px, 7.2vw, 122px);
+  letter-spacing: .035em;
+  line-height: .86;
+}
+
+.profile-heading h2 {
+  margin-top: 26px;
+  font-size: 29px;
+  letter-spacing: .16em;
+}
+
+.profile-content h3 {
+  font-size: clamp(42px, 4.7vw, 82px);
+  letter-spacing: .015em;
+  line-height: 1.08;
+}
+
+.profile-metrics b {
+  font-size: clamp(32px, 3.3vw, 60px);
+  letter-spacing: .02em;
+}
+
+/* Four separate profile cards. */
+.profile-facts {
+  gap: 14px;
+  border: 0;
+}
+
+.profile-facts div,
+.profile-facts div:last-child {
+  min-height: 156px;
+  padding: 24px 26px;
+  border: 1px solid rgba(220, 220, 230, .18);
+  border-radius: 22px;
+  background: rgba(9, 9, 14, .24);
+}
+
+.profile-facts div:hover {
+  border-color: rgba(182, 255, 0, .5);
+  background: rgba(182, 255, 0, .04);
+}
+
+@media (max-width: 1050px) {
+  .profile-facts div,
+  .profile-facts div:last-child,
+  .profile-facts div:nth-child(2),
+  .profile-facts div:nth-child(-n+2) {
+    border: 1px solid rgba(220, 220, 230, .18);
+  }
+}

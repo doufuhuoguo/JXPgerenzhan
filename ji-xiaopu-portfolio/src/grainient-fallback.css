@@ -1,0 +1,36 @@
+/* A single, low-cost Grainient-inspired background shared by all non-hero modules. */
+body {
+  background-color: #000 !important;
+  background-image:
+    radial-gradient(ellipse 72% 60% at 10% 12%, rgba(83, 72, 113, .62), transparent 64%),
+    radial-gradient(ellipse 64% 56% at 86% 78%, rgba(83, 147, 93, .30), transparent 68%),
+    radial-gradient(ellipse 56% 48% at 72% 18%, rgba(83, 72, 113, .38), transparent 66%),
+    linear-gradient(135deg, #000 8%, #141022 48%, #061108 100%) !important;
+  background-size: 150% 150%;
+  animation: none;
+}
+
+/* Let the shared animated background show through; the hero keeps its own art direction. */
+.profile-page,
+.projects-gallery,
+.motion-gallery,
+.ai-gallery,
+.expertise,
+.contact {
+  background: transparent !important;
+}
+
+/* Very subtle film texture only — kept static so it adds no per-frame cost. */
+.profile-page::before,
+.projects-gallery::before,
+.motion-gallery::before,
+.ai-gallery::before,
+.expertise::before,
+.contact::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.55' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}

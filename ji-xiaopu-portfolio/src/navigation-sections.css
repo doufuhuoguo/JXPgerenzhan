@@ -1,0 +1,18 @@
+.nav nav { gap: clamp(24px, 2.5vw, 46px); font-family: 'Noto Sans SC', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: .06em; }
+
+.showcase-section { background: #0c0d10; padding-top: 130px; padding-bottom: 20px; }
+.showcase-section + .showcase-section { padding-top: 45px; }
+.showcase-stage { min-height: min(56vw, 760px); position: relative; overflow: hidden; display: flex; align-items: flex-end; justify-content: space-between; padding: 44px; background: #181a1f; }
+.showcase-stage::before, .showcase-stage::after { content: ''; position: absolute; pointer-events: none; }
+.showcase-stage::before { width: 66%; aspect-ratio: 1; right: -4%; top: -18%; border-radius: 50%; filter: blur(10px); opacity: .85; }
+.showcase-stage::after { inset: 0; background: linear-gradient(0deg, rgba(2,3,5,.88), transparent 55%); }
+.motion-stage::before { background: radial-gradient(circle at 36% 36%, #e9edf5, #5374a7 15%, #101d31 46%, transparent 69%); }
+.motion-stage { background: linear-gradient(135deg, #1b202d, #090a0e); }
+.ai-stage::before { background: radial-gradient(circle at 32% 34%, #d9e1ff, #5361ca 13%, #261752 40%, transparent 68%); }
+.ai-stage { background: linear-gradient(135deg, #151224, #090a0e); }
+.showcase-stage > * { position: relative; z-index: 1; }
+.showcase-stage small { color: #2864ff; font: 10px 'DM Mono', monospace; letter-spacing: .12em; }
+.showcase-stage h2 { margin: 13px 0 10px; font-size: clamp(48px, 7vw, 112px); line-height: .95; letter-spacing: -.08em; font-weight: 500; }
+.showcase-stage p { margin: 0; color: #b9bbc2; font-size: 13px; }
+.showcase-stage b { font: 10px 'DM Mono', monospace; letter-spacing: .1em; align-self: flex-start; }
+@media (max-width: 900px) { .nav nav { gap: 12px; font-size: 11px; } .showcase-section { padding-top: 80px; } .showcase-stage { min-height: 530px; padding: 26px; } }
