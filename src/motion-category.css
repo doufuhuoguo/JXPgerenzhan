@@ -1,0 +1,29 @@
+.motion-category + .motion-category {
+  margin-top: 130px;
+}
+
+.motion-category > header {
+  display: flex;
+  align-items: baseline;
+  gap: 22px;
+  padding-bottom: 19px;
+  border-bottom: 1px solid #303137;
+}
+
+.motion-category > header p {
+  margin: 0;
+  color: #b6ff00;
+  font: 700 10px 'DM Mono', monospace;
+  letter-spacing: .12em;
+}
+
+.motion-category > header h3 {
+  margin: 0;
+  font: 500 42px 'Noto Sans SC', sans-serif;
+  letter-spacing: .08em;
+}
+
+@media (max-width: 900px) {
+  .motion-category + .motion-category { margin-top: 82px; }
+  .motion-category > header h3 { font-size: 30px; }
+}

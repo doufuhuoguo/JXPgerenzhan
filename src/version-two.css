@@ -1,0 +1,530 @@
+:root {
+  --v2-bg: #090a10;
+  --v2-panel: #10121a;
+  --v2-panel-soft: #151724;
+  --v2-cream: #f1ede3;
+  --v2-muted: #989892;
+  --v2-red: #ff3b2f;
+  --v2-line: rgba(241, 237, 227, .16);
+  --v2-atmosphere:
+    radial-gradient(circle at 13% 55%, rgba(54, 49, 83, .26), transparent 42%),
+    radial-gradient(circle at 88% 34%, rgba(18, 44, 64, .24), transparent 45%),
+    linear-gradient(112deg, #11111d 0%, #090a10 49%, #09131c 100%);
+}
+
+body { background: var(--v2-bg); color: var(--v2-cream); }
+.container { width: min(1400px, calc(100% - 96px)); }
+
+.hero {
+  min-height: 860px;
+  background: #070909;
+}
+.hero-video { background: var(--v2-atmosphere); }
+.hero-video::before {
+  inset: 0;
+  width: auto;
+  height: auto;
+  background:
+    repeating-linear-gradient(90deg, rgba(241,237,227,.035) 0 1px, transparent 1px 66px),
+    repeating-linear-gradient(0deg, rgba(241,237,227,.022) 0 1px, transparent 1px 66px);
+  filter: none;
+  transform: none;
+  opacity: .42;
+}
+.hero-video::after { background: linear-gradient(180deg, rgba(0,0,0,.1), rgba(0,0,0,.36) 58%, #080a0b 100%); }
+.horizon, .trail, .reflection { display: none !important; }
+.grain { opacity: .07; mix-blend-mode: screen; }
+.nav {
+  position: absolute;
+  z-index: 5;
+  top: 26px;
+  left: 50%;
+  width: min(1400px, calc(100% - 96px));
+  height: 66px;
+  padding: 0 22px;
+  transform: translateX(-50%);
+  border: 1px solid var(--v2-line);
+  border-radius: 9px;
+  background: rgba(9, 12, 12, .82);
+  backdrop-filter: blur(14px);
+}
+.mark { color: var(--v2-cream); font-size: 15px; letter-spacing: .1em; display: inline-flex; align-items: center; gap: 10px; }
+.mark::before { display: none; }
+.mark span { display: inline-grid; place-items: center; width: 23px; height: 23px; color: #0b0c0c; background: var(--v2-red); font: 800 10px/1 Arial, sans-serif; letter-spacing: 0; }
+.mark b { color: var(--v2-cream); font: 700 14px/1 'Arial Narrow', Arial, sans-serif; letter-spacing: .08em; text-transform: lowercase; }
+.nav nav { gap: 54px; font-size: 11px; color: var(--v2-cream); }
+.nav nav a { opacity: .76; transition: color .22s ease, opacity .22s ease; }
+.nav nav a:hover { color: #59efd2; opacity: 1; }
+.contact-link { padding: 10px 15px; border: 1px solid var(--v2-line); border-radius: 7px; }
+.contact-link i { color: var(--v2-cream); font-size: 13px; }
+.hero-content { padding-top: clamp(190px, 21vh, 255px); }
+.eyebrow { color: var(--v2-cream); opacity: .6; }
+.hero h1 {
+  max-width: 1120px;
+  margin-top: 26px;
+  font-family: 'Arial Narrow', 'Helvetica Neue', Arial, 'Noto Sans SC', sans-serif;
+  font-size: clamp(84px, 12.1vw, 190px);
+  font-weight: 400;
+  letter-spacing: -.07em;
+  line-height: .8;
+}
+.hero h1 span { color: var(--v2-cream); }
+.hero h1 strong { color: var(--v2-red); font-weight: inherit; }
+.hero h1 i { color: var(--v2-red); }
+.hero-chinese { max-width: 620px; margin-top: 38px; color: var(--v2-cream); letter-spacing: .34em; font-size: 12px; }
+.hero-bottom { bottom: 54px; }
+.hero-services { display: none; }
+.scroll { display: inline-flex; align-items: center; justify-content: center; width: auto; height: auto; padding: 13px 20px; color: var(--v2-cream); background: var(--v2-red) !important; border-radius: 5px; }
+.scroll b { position: static; margin-left: 9px; color: inherit; font-size: 14px; }
+
+.profile-page, .projects-gallery, .motion-gallery, .contact { background: var(--v2-atmosphere); }
+.profile-page { padding: 140px 0 160px; }
+.profile-heading { margin-bottom: 62px; }
+.profile-heading p, .gallery-heading h2, .motion-heading h2, .contact h2 {
+  color: var(--v2-cream);
+  font-family: 'Arial Narrow', 'Helvetica Neue', Arial, 'Noto Sans SC', sans-serif;
+  font-weight: 500;
+  letter-spacing: -.055em;
+}
+.profile-heading p { font-size: clamp(72px, 10vw, 146px); line-height: .8; }
+.profile-heading h2, .gallery-heading p, .motion-heading p { display: inline-block; margin-top: 18px; padding: 6px 12px; border: 1px solid rgba(255,59,47,.4); border-radius: 999px; color: var(--v2-red); background: rgba(255,59,47,.09); font-size: 15px; letter-spacing: .08em; }
+.profile-grid { gap: 28px; align-items: stretch; grid-template-columns: minmax(340px, .92fr) 1.28fr; }
+.profile-photo { position: relative; height: auto; min-height: 560px; border: 1px solid var(--v2-line); border-radius: 22px; background: #0a0c0d; }
+.profile-photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 58%, rgba(0,0,0,.38)); pointer-events: none; }
+.profile-content { display: flex; flex-direction: column; justify-content: center; min-height: 560px; padding: clamp(30px, 5vw, 78px); border: 1px solid var(--v2-line); border-radius: 22px; background: linear-gradient(120deg, rgba(28,24,48,.44), rgba(8,22,34,.54)); }
+.profile-kicker { color: var(--v2-red); }
+.profile-content h3 { color: var(--v2-cream); font-family: 'Arial Narrow', 'Helvetica Neue', Arial, 'Noto Sans SC', sans-serif; font-weight: 500; font-size: clamp(42px, 5.2vw, 76px); letter-spacing: -.055em; }
+.profile-intro { max-width: none; color: #cbc7bd; font-size: 17px; }
+.profile-facts { margin-top: 8px; grid-template-columns: repeat(2, 1fr); gap: 10px; border: 0; }
+.profile-facts div { min-height: 120px; padding: 18px; border: 1px solid var(--v2-line) !important; border-radius: 12px; background: rgba(8,10,11,.42); }
+.profile-facts small { color: var(--v2-red); }
+.profile-facts p { color: var(--v2-cream); font-size: 14px; }
+.profile-metrics { grid-template-columns: repeat(3, 1fr); gap: 10px; padding-top: 15px; }
+.profile-metrics > div { padding-top: 18px; border-top: 1px solid var(--v2-line); }
+.profile-metrics b { color: var(--v2-cream); font-family: 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: clamp(40px, 4vw, 66px); letter-spacing: -.04em; }
+.profile-metrics span { color: var(--v2-muted); }
+
+.projects-gallery { padding: 150px 0; }
+.gallery-heading { display: grid; grid-template-columns: 1fr minmax(250px, 410px); gap: 16px 44px; margin-bottom: 72px; }
+.gallery-heading p { grid-column: 1; grid-row: 2; align-self: start; }
+.gallery-heading h2 { grid-column: 1; margin: 0; font-size: clamp(72px, 9vw, 135px); line-height: .78; }
+.gallery-heading span { grid-column: 2; grid-row: 1 / span 2; align-self: end; color: #bdb8ad; font-size: 15px; line-height: 1.8; }
+.gallery-category { margin-top: 82px; }
+.gallery-category > header { padding-bottom: 17px; border-color: var(--v2-line); }
+.gallery-category > header span, .gallery-category em { color: var(--v2-red); }
+.gallery-category h3 { color: var(--v2-cream); font-size: 32px; }
+.gallery-grid, .gallery-category:not(:last-child) .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; padding-top: 16px; }
+.gallery-card, .gallery-card.card-0, .gallery-card.card-3, .gallery-card.card-4, .gallery-category:not(:last-child) .gallery-card, .gallery-category:not(:last-child) .gallery-card.card-0, .gallery-category:not(:last-child) .gallery-card.card-3, .gallery-category:not(:last-child) .gallery-card.card-4 { height: 780px; border: 1px solid rgba(241,237,227,.1); background: #10121a; }
+.gallery-card::after { background: linear-gradient(transparent 45%, rgba(0,0,0,.83)); }
+.gallery-card figcaption b { color: var(--v2-cream); }
+.gallery-card figcaption span { color: var(--v2-red); }
+.gallery-toggle { margin-top: 54px; padding: 16px 28px; color: var(--v2-cream); border-color: var(--v2-red); border-radius: 6px; background: var(--v2-red); font-size: 15px; }
+
+.motion-gallery { padding: 150px 0; }
+.motion-heading { margin-bottom: 74px; }
+.motion-heading h2 { margin: 0; color: var(--v2-cream); font-size: clamp(72px, 9vw, 135px); line-height: .78; }
+.motion-heading span { color: var(--v2-muted); }
+.motion-category > header { border-color: var(--v2-line); }
+.motion-category > header p { color: var(--v2-red); }
+.motion-category > header h3, .motion-item h3 { color: var(--v2-cream); }
+.motion-item { border-color: var(--v2-line); }
+.motion-play { color: var(--v2-cream); border-color: var(--v2-red); background: var(--v2-red); border-radius: 6px; }
+.motion-progress { accent-color: var(--v2-red); }
+
+.contact { min-height: 880px; height: auto; padding: 170px 0 70px; }
+.contact::before { content: ''; position: absolute; inset: 0; opacity: .22; background: repeating-linear-gradient(96deg, transparent 0 74px, rgba(241,237,227,.05) 75px 76px); mask-image: linear-gradient(90deg, #000, transparent 75%); }
+.contact-glow { background: radial-gradient(circle, rgba(39, 45, 82, .24), transparent 65%); opacity: 1; }
+.contact-inner { min-height: 650px; padding-top: 0; }
+.contact .eyebrow { color: var(--v2-red); opacity: 1; }
+.contact h2 { max-width: 1080px; margin: 30px 0 55px; color: var(--v2-cream); font-size: clamp(56px, 7.2vw, 112px); line-height: .89; }
+.contact h2 span { color: var(--v2-cream); }
+.contact-details { justify-content: flex-start; }
+.contact-copy { border-color: var(--v2-line); border-radius: 6px; background: rgba(10,12,12,.8); color: var(--v2-cream); }
+.contact-copy:first-child { border-color: var(--v2-red); background: var(--v2-red); }
+.contact-copy:first-child small, .contact-copy:first-child span, .contact-copy:first-child b { color: var(--v2-cream); }
+footer { border-color: var(--v2-line); color: var(--v2-muted); }
+
+/* Keep the landing page deliberately contained; open every following module up. */
+.profile-page .container,
+.projects-gallery .container,
+.motion-gallery .container,
+.contact .container,
+.about.container,
+.work .container,
+.showcase-section .container,
+.expertise.container { width: min(1740px, calc(100% - 64px)); }
+
+.about, .work, .showcase-section, .expertise {
+  background: var(--v2-atmosphere) !important;
+  color: var(--v2-cream);
+}
+.about .section-label, .work .section-label, .showcase-section .section-label, .expertise .section-label { color: var(--v2-muted); }
+.about .section-label span, .work .section-label span, .showcase-section .section-label span, .expertise .section-label span { color: var(--v2-red); }
+
+@media (max-width: 1050px) {
+  .nav, .container { width: calc(100% - 44px); }
+  .profile-page .container, .projects-gallery .container, .motion-gallery .container, .contact .container, .about.container, .work .container, .showcase-section .container, .expertise.container { width: calc(100% - 44px); }
+  .profile-grid { grid-template-columns: 1fr; }
+  .profile-photo { min-height: 540px; max-width: none; }
+}
+@media (max-width: 700px) {
+  .hero { min-height: 720px; }
+  .nav { top: 14px; height: 58px; padding: 0 14px; }
+  .contact-link { padding: 8px; font-size: 0; }
+  .contact-link i { margin: 0; }
+  .hero-content { padding-top: 165px; }
+  .hero h1 { font-size: clamp(62px, 17vw, 104px); }
+  .profile-page, .projects-gallery, .motion-gallery { padding: 92px 0; }
+  .gallery-heading { grid-template-columns: 1fr; margin-bottom: 45px; }
+  .gallery-heading h2, .gallery-heading p, .gallery-heading span { grid-column: 1; grid-row: auto; }
+  .gallery-heading span { font-size: 13px; }
+  .gallery-grid, .gallery-category:not(:last-child) .gallery-grid { gap: 9px; }
+  .gallery-card, .gallery-card.card-0, .gallery-card.card-3, .gallery-card.card-4, .gallery-category:not(:last-child) .gallery-card, .gallery-category:not(:last-child) .gallery-card.card-0, .gallery-category:not(:last-child) .gallery-card.card-3, .gallery-category:not(:last-child) .gallery-card.card-4 { height: 380px; }
+  .profile-content { padding: 28px; min-height: 0; }
+  .profile-facts { grid-template-columns: 1fr; }
+  .contact { padding-top: 115px; min-height: 720px; }
+}
+
+/* The landing title is intentionally heavier and more open than the supporting headings. */
+.hero h1,
+.hero h1 strong {
+  font-weight: 700 !important;
+  letter-spacing: .015em !important;
+}
+
+/* A more compact, poster-like opening title keeps the visual focus without filling the page. */
+.hero h1 {
+  max-width: 1000px;
+  font-size: clamp(72px, 8.8vw, 150px) !important;
+  line-height: .86;
+  letter-spacing: .03em !important;
+}
+.hero h1 strong { letter-spacing: .02em !important; }
+.hero-chinese { font-size: 16px; letter-spacing: .38em; font-weight: 700; }
+.scroll { padding: 16px 26px; font: 700 16px/1 'Noto Sans SC', sans-serif; letter-spacing: .12em; }
+.scroll b { position: static; margin-left: 10px; color: var(--v2-cream) !important; font: 700 18px/1 Arial, sans-serif; }
+.scroll { transition: background .22s ease, color .22s ease, transform .22s ease; }
+.scroll:hover { background: #59efd2 !important; color: #071016 !important; transform: translateY(-2px); }
+.scroll:hover b { color: #071016 !important; }
+
+@media (max-width: 700px) {
+  .hero h1 { font-size: clamp(54px, 14vw, 88px) !important; letter-spacing: .01em !important; }
+  .hero-chinese { font-size: 14px; letter-spacing: .24em; }
+  .scroll { padding: 14px 20px; font-size: 14px; }
+}
+
+/* Homepage reference treatment: deep wine red transitions into muted petrol black. */
+.hero-video {
+  background:
+    radial-gradient(ellipse 62% 88% at 9% 45%, rgba(67, 24, 22, .64), transparent 72%),
+    radial-gradient(ellipse 58% 86% at 91% 30%, rgba(7, 35, 36, .48), transparent 73%),
+    linear-gradient(108deg, #130d0e 0%, #0a0c0e 49%, #061012 100%) !important;
+}
+.hero-video::after { background: linear-gradient(180deg, rgba(0,0,0,.23), rgba(0,0,0,.47) 58%, rgba(2,5,6,.94) 100%); }
+.hero h1,
+.hero h1 strong {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif !important;
+  font-weight: 400 !important;
+  letter-spacing: .052em !important;
+  line-height: .78;
+}
+.hero h1 strong { letter-spacing: .045em !important; }
+.hero h1 { max-width: 1600px; }
+.hero h1 span { white-space: nowrap; margin-bottom: .15em; }
+.hero-statement {
+  margin: 0 0 2px auto;
+  color: var(--v2-cream);
+  font: 800 clamp(17px, 1.35vw, 27px)/.88 Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  letter-spacing: .035em;
+  text-align: left;
+}
+.hero-statement span { color: var(--v2-red); }
+
+/* Profile-specific accent: bright blue, while the rest of the portfolio keeps its red cue. */
+.profile-page { --profile-accent: #59efd2; }
+.profile-heading p {
+  color: var(--v2-cream);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: 400;
+  letter-spacing: .045em;
+  line-height: .8;
+}
+.profile-heading h2 {
+  color: var(--profile-accent);
+  border-color: color-mix(in srgb, var(--profile-accent) 50%, transparent);
+  background: color-mix(in srgb, var(--profile-accent) 10%, transparent);
+}
+.profile-kicker,
+.profile-facts small { color: var(--profile-accent); }
+
+/* Reuse the reference's mint-blue accent on the homepage. */
+.hero h1 strong,
+.hero h1 i,
+.hero-chinese { color: #59efd2 !important; }
+
+/* All following sections share the mint accent, while the landing page remains unchanged. */
+.profile-page,
+.projects-gallery,
+.motion-gallery,
+.contact {
+  --v2-red: #59efd2;
+}
+.profile-page { background: linear-gradient(120deg, #080c12 0%, #06090d 52%, #071014 100%); }
+.projects-gallery { background: linear-gradient(135deg, #07090d 0%, #050609 100%); }
+.motion-gallery { background: linear-gradient(135deg, #080b10 0%, #05070a 100%); }
+.contact { background: linear-gradient(125deg, #07090c 0%, #05090b 62%, #061014 100%); }
+.profile-content { background: linear-gradient(120deg, rgba(12,16,25,.84), rgba(4,13,18,.88)); }
+
+/* Restore the brighter landing treatment. */
+.hero-video {
+  background:
+    radial-gradient(ellipse 62% 88% at 9% 45%, rgba(91, 34, 29, .78), transparent 72%),
+    radial-gradient(ellipse 58% 86% at 91% 30%, rgba(11, 48, 49, .58), transparent 73%),
+    linear-gradient(108deg, #1d1315 0%, #111316 49%, #091719 100%) !important;
+}
+.hero-video::after { background: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.25) 58%, rgba(3,7,8,.88) 100%); }
+
+/* The content sections use deliberately darker, near-black panels than the landing page. */
+.profile-page {
+  background:
+    radial-gradient(ellipse 65% 78% at 8% 45%, rgba(38, 30, 63, .32), transparent 72%),
+    radial-gradient(ellipse 52% 75% at 96% 25%, rgba(10, 48, 56, .27), transparent 70%),
+    linear-gradient(120deg, #080a11 0%, #040609 54%, #061116 100%) !important;
+}
+.projects-gallery {
+  background:
+    radial-gradient(ellipse 55% 65% at 82% 14%, rgba(14, 47, 54, .24), transparent 72%),
+    radial-gradient(ellipse 48% 60% at 7% 80%, rgba(34, 27, 53, .22), transparent 73%),
+    linear-gradient(135deg, #07090e 0%, #030508 100%) !important;
+}
+.motion-gallery {
+  background:
+    radial-gradient(ellipse 62% 74% at 9% 28%, rgba(29, 32, 64, .28), transparent 70%),
+    radial-gradient(ellipse 58% 75% at 94% 70%, rgba(9, 42, 50, .24), transparent 70%),
+    linear-gradient(135deg, #070a10 0%, #030609 100%) !important;
+}
+.contact {
+  background:
+    radial-gradient(ellipse 62% 75% at 14% 30%, rgba(31, 29, 55, .28), transparent 72%),
+    radial-gradient(ellipse 60% 78% at 93% 50%, rgba(8, 44, 49, .28), transparent 72%),
+    linear-gradient(125deg, #06090d 0%, #030608 62%, #061217 100%) !important;
+}
+.profile-content { background: linear-gradient(120deg, rgba(7,10,16,.96), rgba(3,9,13,.97)) !important; }
+.profile-facts div, .gallery-card, .motion-item, .contact-copy { background-color: #07090c !important; }
+
+/* Keep the final contact panel as a full viewport and anchor the contact actions inside it. */
+.contact {
+  height: 100vh !important;
+  min-height: 760px;
+  padding: 0 !important;
+}
+.contact-inner {
+  height: 100%;
+  min-height: 0;
+  padding-top: clamp(128px, 15vh, 190px);
+}
+.contact .contact-details {
+  position: absolute;
+  top: min(76vh, 800px);
+  left: 0;
+  right: auto;
+  bottom: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 18px;
+}
+.contact .contact-details + footer { bottom: 42px; }
+.contact .contact-copy {
+  color: #071016;
+  border-color: rgba(241, 237, 227, .76);
+  background: var(--v2-cream) !important;
+}
+.contact .contact-copy:first-child { background: var(--v2-cream) !important; }
+.contact .contact-copy:first-child small,
+.contact .contact-copy:first-child span,
+.contact .contact-copy:first-child b { color: inherit; }
+.contact .contact-copy:hover {
+  color: #071016;
+  border-color: var(--v2-red);
+  background: var(--v2-red) !important;
+}
+
+/* Project and video actions share the same white-to-mint interaction. */
+.gallery-toggle,
+.motion-play {
+  color: #071016 !important;
+  border-color: var(--v2-cream) !important;
+  background: var(--v2-cream) !important;
+  transition: transform .25s ease, color .25s ease, background .25s ease, border-color .25s ease;
+}
+.gallery-toggle:hover,
+.motion-play:hover {
+  color: #071016 !important;
+  border-color: var(--v2-red) !important;
+  background: var(--v2-red) !important;
+  transform: translateY(-3px);
+}
+
+/* Bring all section display titles into a quieter hierarchy. */
+.profile-heading p { font-size: clamp(62px, 8.2vw, 118px); }
+.gallery-heading h2,
+.motion-heading h2 { font-size: clamp(60px, 7.3vw, 112px); }
+.contact h2 { font-size: clamp(52px, 6.2vw, 96px); }
+
+/* Keep the project and motion labels, without the former red capsule treatment. */
+.gallery-heading p,
+.motion-heading p {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+/* Refine the profile hierarchy: a smaller portrait and a more compact introduction. */
+.profile-grid {
+  grid-template-columns: minmax(290px, .74fr) minmax(0, 1.46fr);
+  align-items: center;
+}
+.profile-photo {
+  min-height: 0;
+  height: min(47vw, 720px);
+}
+.profile-content h3 {
+  font-size: clamp(34px, 3.9vw, 58px);
+  line-height: .96;
+}
+.profile-metrics b,
+.profile-metrics span { color: var(--profile-accent); }
+
+.profile-page { min-height: 100vh; }
+.profile-metrics {
+  min-height: 82px;
+  padding-top: 10px;
+  padding-bottom: 4px;
+}
+.profile-metrics b { font-size: clamp(30px, 3vw, 48px); }
+.profile-metrics span { margin-top: 5px; }
+.profile-facts {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 20px;
+}
+.profile-facts div { min-height: 108px; padding: 16px; }
+
+/* Give the profile composition more breathing room below its title. */
+.profile-grid {
+  margin-top: clamp(32px, 4.2vh, 58px);
+}
+.profile-metrics {
+  margin-top: 18px;
+  min-height: 70px;
+}
+.profile-metrics b {
+  font-size: clamp(27px, 2.65vw, 42px);
+  line-height: .82;
+}
+.profile-metrics span {
+  margin-top: 8px;
+}
+
+/* Lower the portrait and information panel as one composition. */
+.profile-grid {
+  margin-top: clamp(82px, 8vh, 112px);
+}
+
+/* Let the profile label read as simple text rather than a bordered badge. */
+.profile-heading h2 {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+.profile-content h3 {
+  letter-spacing: .045em;
+}
+
+/* Simplify work-section headings and align their labels with the requested rhythm. */
+.gallery-heading {
+  grid-template-columns: 1fr;
+}
+.motion-heading {
+  display: block;
+}
+.motion-heading p {
+  display: block;
+  margin-top: 25px;
+}
+.motion-category > header p {
+  order: 2;
+  margin-left: auto;
+}
+.motion-category > header h3 {
+  order: 1;
+}
+
+/* Use one consistent blue accent throughout the project gallery. */
+.projects-gallery .gallery-heading p,
+.projects-gallery .gallery-category > header span,
+.projects-gallery .gallery-category em,
+.projects-gallery .gallery-card figcaption span {
+  color: #59efd2 !important;
+}
+
+/* Match every motion-work accent to the site's bright blue. */
+.motion-gallery .motion-heading p,
+.motion-gallery .motion-category > header p,
+.motion-gallery .motion-item header span {
+  color: #59efd2 !important;
+}
+.contact h2 span {
+  color: #59efd2 !important;
+}
+
+/* Keep the landing statement as one deliberate line with a more open rhythm. */
+.hero-statement {
+  white-space: nowrap;
+  letter-spacing: .09em;
+}
+
+/* Keep work-section titles prominent without overwhelming the work itself. */
+.gallery-heading h2,
+.motion-heading h2 {
+  font-size: clamp(48px, 5.8vw, 88px);
+}
+
+/* Refine the two highlighted display treatments. */
+.hero-statement {
+  font-family: 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 600;
+}
+.profile-content h3 {
+  font-size: clamp(30px, 3.25vw, 48px);
+}
+
+/* Fine-tune the two small landing-page signatures. */
+.hero-chinese {
+  font-size: clamp(18px, 1.15vw, 22px);
+}
+.hero-statement {
+  font-size: clamp(14px, .95vw, 20px);
+}
+
+@media (max-width: 1050px) {
+  .profile-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .profile-grid { margin-top: 48px; }
+}
+
+@media (max-width: 1050px) {
+  .profile-grid { grid-template-columns: 1fr; }
+  .profile-photo { height: min(105vw, 620px); }
+}
+
+@media (max-width: 700px) {
+  .hero h1, .hero h1 strong { letter-spacing: .02em !important; line-height: .83; }
+  .hero h1 span { white-space: normal; margin-bottom: .12em; }
+  .hero-statement { font-size: 15px; }
+  .contact { min-height: 720px; height: auto !important; padding: 100px 0 190px !important; }
+  .contact-inner { height: auto; padding-top: 0; }
+  .contact .contact-details { position: static; margin-top: 46px; align-items: stretch; flex-direction: column; gap: 12px; }
+  .contact .contact-details + footer { bottom: 38px; }
+}

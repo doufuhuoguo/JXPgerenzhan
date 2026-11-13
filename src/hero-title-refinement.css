@@ -1,0 +1,12 @@
+.hero-chinese {
+  font-size: clamp(18px, 1.3vw, 24px);
+  font-weight: 600;
+  letter-spacing: .5em;
+}
+
+@media (max-width: 900px) {
+  .hero-chinese {
+    font-size: 15px;
+    letter-spacing: .32em;
+  }
+}

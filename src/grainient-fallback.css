@@ -1,0 +1,31 @@
+/* A calm, smooth colour field shared by all non-hero modules. */
+body {
+  background-color: #05080c !important;
+  background-image:
+    radial-gradient(ellipse 84% 72% at 8% 8%, rgba(38, 39, 71, .30), transparent 68%),
+    radial-gradient(ellipse 78% 70% at 96% 52%, rgba(10, 64, 70, .22), transparent 72%),
+    linear-gradient(128deg, #070a10 0%, #04070a 50%, #071316 100%) !important;
+  background-size: 100% 100%;
+  animation: none;
+}
+
+/* Let the shared animated background show through; the hero keeps its own art direction. */
+.profile-page,
+.projects-gallery,
+.motion-gallery,
+.ai-gallery,
+.expertise,
+.contact {
+  background: transparent !important;
+}
+
+/* Leave section surfaces texture-free for an even, clean transition. */
+.profile-page::before,
+.projects-gallery::before,
+.motion-gallery::before,
+.ai-gallery::before,
+.expertise::before,
+.contact::before {
+  content: none;
+  display: none;
+}

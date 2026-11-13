@@ -1,0 +1,9 @@
+/* Keep section titles prominent without letting them overpower the work. */
+.profile-heading p {
+  font-size: clamp(42px, 6vw, 104px);
+}
+
+.gallery-heading h2,
+.motion-heading h2 {
+  font-size: clamp(44px, 6.2vw, 104px);
+}
