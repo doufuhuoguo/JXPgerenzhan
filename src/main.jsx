@@ -52,7 +52,7 @@ function ContactSection() {
     <div className="contact-glow" />
     <div className="container contact-inner">
       <p className="eyebrow">04 / LET'S CONNECT</p>
-      <h2>Looking forward to the <span>next creation.</span></h2>
+      <h2>Wander further to find <span>unseen possibilities.</span></h2>
       <div className="contact-details" aria-label="联系方式">
         <button type="button" className="contact-copy" onClick={() => copyContact('3347374195@qq.com', '邮箱')}>
           <small>EMAIL</small><span>3347374195@qq.com</span><b>{copied === '邮箱' ? '已复制' : '复制'}</b>
